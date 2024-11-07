@@ -72,7 +72,7 @@ ambientLight.position.set(25, -15, -400);
 
 const lightHelper= new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
-//const controls = new OrbitControls({camera, renderer:domElement})
+const controls = new OrbitControls(camera, renderer.domElement);
 
 //adding objects to the scene
 scene.add(cube);
@@ -103,7 +103,7 @@ function animate(){
     //rotate sphere
     godzillaMesh.rotation.y += 0.05;
     //allows orbit controls to update live
-    //controls.update();
+    controls.update();
 
     renderer.render(scene, camera); //tell the renderer to actually render a scene
 }
